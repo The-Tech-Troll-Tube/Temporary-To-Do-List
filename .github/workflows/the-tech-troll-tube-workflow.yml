@@ -1,0 +1,35 @@
+name: CI/CD Auto-Deploy @ The Tech Troll Tube Angular
+
+on:
+  # Trigger the workflow on push or pull request,
+  # but only for the master branch
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: windows-2019
+    strategy:
+      matrix:
+        node-version: [14.x]
+    steps:
+    - uses: actions/checkout@v1
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+      
+    - name: Installation
+      run: npm i
+      
+    - name: Docusaurus 2 Building Process
+      run: ng build
+
+#       run: npm run build
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+#         publish_dir: ./website/build
+        publish_dir: ./build/
