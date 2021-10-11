@@ -95,6 +95,15 @@ jobs:
       # - name: Test
       #   run: |
       #     npm run test -- --prod
+
+
+                name: deploy_dist
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@releases/v3
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: deploy_dist/angular-demo
           
 
 # name: CI/CD Auto-Deploy @ The Tech Troll Tube Angular
