@@ -21,8 +21,8 @@ jobs:
         node-version: ${{ matrix.node-version }}
       
     - name: Installation of Angular
-      # run: npm i @angular/cli
-      run: npm install -g @angular/cli
+      run: npm i @angular/cli
+      # run: npm install -g @angular/cli
 
     - name: Policy
       run: Set-ExecutionPolicy RemoteSigned -Scope CurrentUser 
