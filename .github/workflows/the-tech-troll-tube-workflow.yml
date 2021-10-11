@@ -27,7 +27,7 @@ jobs:
     #   run: npm install -g @angular/cli > /dev/null
 
     - name: NPM build Angular Production
-      run: npm build
+      run: npm build --prod
 
 #       run: npm run build
     - name: Deploy
@@ -35,7 +35,7 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
 #         publish_dir: ./website/build
-        publish_dir: ./build/
+        publish_dir: ./dist/
 
 
 
