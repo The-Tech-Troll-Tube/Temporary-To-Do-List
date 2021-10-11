@@ -24,7 +24,7 @@ jobs:
     #   run: npm i @angular/cli
 
     - name: NPM Install Angular
-      run: npm install -g @angular/cli > /dev/null
+      run: npm install -g @angular/cli
 
     - name: NPM build Angular Production
       run: ng build --prod
