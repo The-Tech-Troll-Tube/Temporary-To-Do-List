@@ -39,7 +39,7 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
 #         publish_dir: ./website/build
-        publish_dir: ./dist/
+        publish_dir: ./routing-app/
 
 
 
