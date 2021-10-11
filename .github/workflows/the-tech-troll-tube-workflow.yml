@@ -23,11 +23,14 @@ jobs:
     - name: Installation of Angular
       run: npm i @angular/cli
 
+    - name: Policy
+      run: Set-ExecutionPolicy RemoteSigned -Scope CurrentUser 
+
     # - name: NPM Install Angular
     #   run: npm install -g @angular/cli > /dev/null
 
     - name: NPM build Angular Production
-      run: npm build --prod
+      run: npm run-script build
 
 #       run: npm run build
     - name: Deploy
