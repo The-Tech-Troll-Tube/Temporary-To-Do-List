@@ -96,8 +96,6 @@ jobs:
       #   run: |
       #     npm run test -- --prod
 
-
-                name: deploy_dist
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
